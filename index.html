@@ -6,90 +6,109 @@
   <title>Zainab Tehreem Portfolio</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #333;
+      display: flex;
     }
-    header {
-      background: #4CAF50;
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #0d47a1; /* Blue */
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
     }
-    header h1 {
+
+    .sidebar h1 {
+      font-size: 24px;
       margin: 0;
-      font-size: 2.5rem;
     }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+
+    .sidebar h2 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 5px 0 20px 0;
     }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
     }
-    h2 {
-      color: #4CAF50;
-      border-bottom: 2px solid #4CAF50;
-      padding-bottom: 0.5rem;
-    }
-    .contact {
-      background: #fff;
-      padding: 1rem;
-      margin-top: 2rem;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    }
-    .contact p {
-      margin: 0.5rem 0;
-    }
-    footer {
-      text-align: center;
-      background: #333;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    a {
-      color: #4CAF50;
+
+    .sidebar nav a {
       text-decoration: none;
+      color: white;
+      font-size: 16px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .sidebar nav a:hover {
+      background-color: #1976d2;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .content h2 {
+      color: #0d47a1;
+    }
+
+    .contact {
+      margin-top: 30px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- Sidebar -->
+  <div class="sidebar">
     <h1>Zainab Tehreem</h1>
-    <p>Justice Wali | AI Enthusiast | Learner</p>
-  </header>
+    <h2>Justice Wali</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I’m Zainab Tehreem, also known as Justice Wali.  
-       I’m passionate about AI, digital learning, and helping others grow with technology.</p>
+  <!-- Main Content -->
+  <div class="content">
+    <section id="home">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Hello! I’m Zainab Tehreem Justice Wali. This is my personal portfolio website.</p>
+    </section>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>AI & Digital Tools</li>
-      <li>Content Creation</li>
-      <li>Graphic Design (Canva)</li>
-      <li>Basic Coding (HTML, CSS, Python)</li>
-    </ul>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am passionate about learning, technology, and helping others through knowledge.</p>
+    </section>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Name:</strong> Zainab Tehreem (Justice Wali)</p>
-      <p><strong>Email:</strong> <a href="mailto:mishikhan78692@gmail.com">mishikhan78692@gmail.com</a></p>
-    </div>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>AI & Digital Literacy</li>
+        <li>Graphic Designing</li>
+        <li>Content Creation</li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>© 2025 Zainab Tehreem | All Rights Reserved</p>
-  </footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact">Email: <a href="mailto:mishikhan78692@gmail.com">mishikhan78692@gmail.com</a></p>
+    </section>
+  </div>
 </body>
 </html>
