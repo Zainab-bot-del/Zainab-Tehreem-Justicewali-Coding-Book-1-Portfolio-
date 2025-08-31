@@ -1,122 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Zainab Tehreem</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #222;
-    }
-
-    .container {
-      display: flex;
-      min-height: 100vh;
-      padding: 40px;
-    }
-
-    /* Left side picture */
-    .left {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .left img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #007bff;
-    }
-
-    /* Right side content */
-    .right {
-      flex: 2;
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #007bff;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-top: 40px;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .skills {
-      display: flex;
-      gap: 40px;
-      margin: 20px 0;
-      font-size: 18px;
-    }
-
-    .achievements {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin: 30px 0;
-      font-size: 18px;
-      font-weight: bold;
-      color: #007bff;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: background 0.3s;
-    }
-
-    .resume-btn:hover {
-      background: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainab Tehreem Justicewali - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .image {
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-right: 30px;
+        }
+        .text {
+            flex-grow: 1;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .resume-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .resume-btn:hover {
+            background-color: #e65b50;
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid #eee;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #6e8efb;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .stat {
+            text-align: center;
+            margin: 15px;
+            padding: 15px;
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            width: 120px;
+        }
+        .stat h3 {
+            font-size: 1.8rem;
+            color: #a777e3;
+            margin-bottom: 5px;
+        }
+        .stat p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Left side picture -->
-    <div class="left">
-      <img src="your-photo.jpg" alt="Zainab Tehreem">
+    <div class="header">
+        <img src="https://via.placeholder.com/300x400" alt="Zainab Tehreem Justicewali" class="image">
+        <div class="text">
+            <h1>Zainab Tehreem Justicewali</h1>
+            <h2>AI Enthusiast & Student at Rehan School Online Academy</h2>
+            <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+        </div>
     </div>
-
-    <!-- Right side content -->
-    <div class="right">
-      <h1>About Me</h1>
-      <p>Hello, I am <b>Zainab Tehreem</b>, a 13-year-old passionate learner, video editor, and coder.</p>
-
-      <h2>My Skills</h2>
-      <div class="skills">
-        <p>🎬 Video Editing</p>
-        <p>💻 Coding</p>
-      </div>
-
-      <div class="achievements">
-        <div>14+ Partners</div>
-        <div>44+ Projects Done</div>
-        <div>20+ Happy Clients</div>
-        <div>130+ Meetings</div>
-      </div>
-
-      <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+    <div class="container">
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner, video editor, and coder.</p>
+        </div>
+        <div class="section">
+            <h2>My Skills</h2>
+            <p>🎬 Video Editing</p>
+            <p>💻 Coding</p>
+        </div>
+        <div class="section">
+            <h2>My Achievements</h2>
+            <div class="stats">
+                <div class="stat">
+                    <h3>14+</h3>
+                    <p>Partners</p>
+                </div>
+                <div class="stat">
+                    <h3>44+</h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="stat">
+                    <h3>20+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                    <h3>130+</h3>
+                    <p>Meetings</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+        </div>
     </div>
-  </div>
-
 </body>
 </html>
