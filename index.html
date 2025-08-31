@@ -7,18 +7,52 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Favicon -->
+<link rel="icon" href="zzz.PNG" type="image/png">
+
+
   <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     .w3-sidebar {width: 120px; background: #222;}
     #main {margin-left: 120px}
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    /* Modal styling */
+    #modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    #modalImg {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 900px;
+    }
+    #modal span {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body class="w3-black">
 
 <!-- Sidebar -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <img src="your-photo.jpg" style="width:100%">
+  <img src="zzz.PNG" style="width:100%" alt="Zainab">
   <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
@@ -54,34 +88,33 @@
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo">I'm <span class="w3-hide-small">Zainab Tehreem Justicewali</span></h1>
     <p>Video Editor & Coder</p>
-    <img src="your-photo.jpg" alt="Zainab" class="w3-image" width="800" height="600">
+    <img src="zzz.PNG" alt="Zainab" class="w3-image" width="800" height="600">
   </header>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">About Me</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding and video editing.</p>
+    <p> Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding and video editing. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
 
+    <!-- Skills and Stats -->
     <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <p class="w3-wide">🎬 Video Editing</p>
+    <p class="w3-wide"> Video Editing</p>
     <div class="w3-white">
       <div class="w3-dark-grey" style="height:28px;width:90%"></div>
     </div>
-    <p class="w3-wide">💻 Coding</p>
+    <p class="w3-wide"> Coding</p>
     <div class="w3-white">
       <div class="w3-dark-grey" style="height:28px;width:85%"></div>
     </div><br>
 
-    <!-- Stats -->
     <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section"><span class="w3-xlarge">14+</span><br>Partners</div>
-      <div class="w3-quarter w3-section"><span class="w3-xlarge">44+</span><br>Projects Done</div>
-      <div class="w3-quarter w3-section"><span class="w3-xlarge">20+</span><br>Happy Clients</div>
-      <div class="w3-quarter w3-section"><span class="w3-xlarge">130+</span><br>Meetings</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">4+</span><br>Partners</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">24</span><br>Projects Done</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge"> 0</span><br>Happy Clients</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">24+</span><br>Meetings</div>
     </div>
 
-    <!-- Resume Button -->
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <i class="fa fa-download"></i> Download Resume
     </button>
@@ -89,20 +122,49 @@
 
   <!-- Portfolio Section -->
   <div class="w3-padding-64 w3-content" id="portfolio">
-    <h2 class="w3-text-light-grey">My Portfolio</h2>
-    <hr style="width:200px" class="w3-opacity">
+    <h2 class="w3-text-light-grey w3-center">Projects</h2>
+    <hr style="width:200px" class="w3-opacity w3-center">
 
-    <!-- Example Project Grid -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="project1.jpg" style="width:100%" alt="Project 1">
-        <img src="project2.jpg" style="width:100%" alt="Project 2">
+    <!-- Projects Grid -->
+    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <!-- Left Half -->
+      <div style="flex:1; min-width:300px; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        <img src="JUST.jpg" style="width:40%;cursor:pointer" alt="Project 1" onclick="openModal(this)">
+        <img src="Tic-Tac-Toe game.jpg" style="width:40%;cursor:pointer" alt="Project 2" onclick="openModal(this)">
+        <img src="Calculator.jpg" style="width:40%;cursor:pointer" alt="Project 3" onclick="openModal(this)">
+        <img src="To-Do List.jpg" style="width:40%;cursor:pointer" alt="Project 4" onclick="openModal(this)">
+        <img src="E.jpg" style="width:40%;cursor:pointer" alt="Project 5" onclick="openModal(this)">
+        <img src="W.jpg" style="width:40%;cursor:pointer" alt="Project 6" onclick="openModal(this)">
+        <img src="R.jpg" style="width:40%;cursor:pointer" alt="Project 7" onclick="openModal(this)">
+        <img src="T.jpg" style="width:40%;cursor:pointer" alt="Project 8" onclick="openModal(this)">
+        <img src="Y.jpg" style="width:40%;cursor:pointer" alt="Project 9" onclick="openModal(this)">
+        <img src="U.jpg" style="width:40%;cursor:pointer" alt="Project 10" onclick="openModal(this)">
+        <img src="I.jpg" style="width:40%;cursor:pointer" alt="Project 11" onclick="openModal(this)">
+        <img src="O.jpg" style="width:40%;cursor:pointer" alt="Project 12" onclick="openModal(this)">
       </div>
-      <div class="w3-half">
-        <img src="project3.jpg" style="width:100%" alt="Project 3">
-        <img src="project4.jpg" style="width:100%" alt="Project 4">
+
+      <!-- Right Half -->
+      <div style="flex:1; min-width:300px; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        <img src="P.jpg" style="width:40%;cursor:pointer" alt="Project 13" onclick="openModal(this)">
+        <img src="L.jpg" style="width:40%;cursor:pointer" alt="Project 14" onclick="openModal(this)">
+        <img src="K.jpg" style="width:40%;cursor:pointer" alt="Project 15" onclick="openModal(this)">
+        <img src="J.jpg" style="width:40%;cursor:pointer" alt="Project 16" onclick="openModal(this)">
+        <img src="H.jpg" style="width:40%;cursor:pointer" alt="Project 17" onclick="openModal(this)">
+        <img src="G.jpg" style="width:40%;cursor:pointer" alt="Project 18" onclick="openModal(this)">
+        <img src="F.jpg" style="width:40%;cursor:pointer" alt="Project 19" onclick="openModal(this)">
+        <img src="D.jpg" style="width:40%;cursor:pointer" alt="Project 20" onclick="openModal(this)">
+        <img src="1.jpg" style="width:40%;cursor:pointer" alt="Project 21" onclick="openModal(this)">
+        <img src="2.jpg" style="width:40%;cursor:pointer" alt="Project 22" onclick="openModal(this)">
+        <img src="3.jpg" style="width:40%;cursor:pointer" alt="Project 23" onclick="openModal(this)">
+        <img src="4.jpg" style="width:40%;cursor:pointer" alt="Project 24" onclick="openModal(this)">
       </div>
     </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="modal">
+    <span onclick="closeModal()">&times;</span>
+    <img id="modalImg">
   </div>
 
   <!-- Contact Section -->
@@ -129,13 +191,30 @@
 
   <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">© 2025 Zainab Tehreem Portfolio</p>
+    <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    </a>
+    <a href=" https://www.instagram.com/zain.abtehreem/ " target="_blank">
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank">
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </a>
+    <p class="w3-medium">© 2024 Zainab Tehreem Portfolio</p>
   </footer>
 
 </div>
+
+<!-- Modal Script -->
+<script>
+function openModal(element) {
+  document.getElementById("modalImg").src = element.src;
+  document.getElementById("modal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
 </body>
 </html>
