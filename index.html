@@ -3,109 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zainab Tehreem Portfolio</title>
+  <title>Zainab Tehreem Justicewali Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
+      background: #f0f8ff;
       color: #333;
     }
 
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      background: #0d47a1;
-      color: white;
-    }
-    .logo h2 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .logo span {
-      font-size: 14px;
-      display: block;
-      opacity: 0.8;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffca28;
-    }
-
-    /* Hero Section */
     .hero {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 90vh;
-      background: linear-gradient(to right, #1976d2, #0d47a1);
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      background: linear-gradient(to right, #0077b6, #90e0ef);
       color: white;
-      text-align: center;
+    }
+
+    .hero-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-left img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+    }
+
+    .hero-right {
+      flex: 1;
       padding: 20px;
     }
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
+
+    .hero-right h1 {
+      font-size: 3rem;
+      margin: 0;
     }
-    .hero h3 {
-      font-size: 24px;
-      font-weight: 300;
-      margin-bottom: 30px;
+
+    .hero-right h2 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      font-weight: 400;
     }
-    .hero button {
-      padding: 12px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 25px;
-      background: #ffca28;
-      color: #0d47a1;
+
+    .hero-right button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
       font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: #03045e;
+      color: white;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
-    .hero button:hover {
-      background: #ffc107;
+
+    .hero-right button:hover {
+      background: #023e8a;
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">
-      <h2>Zainab Tehreem</h2>
-      <span>Justice Wali</span>
-    </div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Me</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>Hello, I'm Zainab Tehreem</h1>
-    <h3>Aspiring Justice Wali | AI Enthusiast | Learner</h3>
-    <button>Contact Me</button>
+    <div class="hero-left">
+      <!-- Add your picture -->
+      <img src="your-photo.jpg" alt="Zainab Tehreem">
+    </div>
+    <div class="hero-right">
+      <h1>Zainab Tehreem Justicewali</h1>
+      <h2>Video Editor and Coder</h2>
+      <button>My Portfolio</button>
+    </div>
   </section>
-
 </body>
 </html>
