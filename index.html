@@ -1,130 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zainab Tehreem Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
-    section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 50px;
-    }
-    .left, .right {
-      flex: 1;
-      padding: 20px;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #2c3e50;
-    }
-    h2 {
-      font-size: 1.5em;
-      margin: 10px 0;
-      color: #555;
-    }
-    h3 {
-      margin-top: 20px;
-      color: #2c3e50;
-    }
-    p {
-      line-height: 1.6;
-    }
-    .skills {
-      margin-top: 20px;
-    }
-    .skills div {
-      background: #eee;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .stats {
-      display: flex;
-      gap: 20px;
-      margin: 30px 0;
-      text-align: center;
-    }
-    .stats div {
-      flex: 1;
-      background: #f5f5f5;
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #3498db;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #2980b9;
-    }
-    /* Page background colors */
-    #home {
-      background: #f0f8ff;
-    }
-    #about {
-      background: #fafafa;
-    }
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-sidebar {width: 120px; background: #222;}
+    #main {margin-left: 120px}
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
   </style>
 </head>
-<body>
+<body class="w3-black">
 
-  <!-- First Page -->
-  <section id="home">
-    <div class="left">
-      <img src="your-picture.jpg" alt="Zainab Tehreem">
-    </div>
-    <div class="right">
-      <h1>Zainab Tehreem Justice Wali</h1>
-      <h2>Video Editor & Coder</h2>
-      <h3>My Portfolio</h3>
-    </div>
-  </section>
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <img src="your-photo.jpg" style="width:100%">
+  <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PORTFOLIO</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
 
-  <!-- Second Page -->
-  <section id="about">
-    <div class="left">
-      <img src="your-picture.jpg" alt="About Me">
-    </div>
-    <div class="right">
-      <h2>About Me</h2>
-      <p>I am a 13-year-old passionate learner who loves coding and video editing.</p>
+<!-- Top navbar for small screens -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#home" class="w3-bar-item w3-button" style="width:25%">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25%">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" style="width:25%">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25%">CONTACT</a>
+  </div>
+</div>
 
-      <h3>My Skills</h3>
-      <div class="skills">
-        <div>🎬 Video Editing</div>
-        <div>💻 Coding</div>
+<!-- Main Page Content -->
+<div class="w3-padding-large" id="main">
+
+  <!-- Hero Section -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo">I'm <span class="w3-hide-small">Zainab Tehreem Justicewali</span></h1>
+    <p>Video Editor & Coder</p>
+    <img src="your-photo.jpg" alt="Zainab" class="w3-image" width="800" height="600">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">About Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding and video editing.</p>
+
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">🎬 Video Editing</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+    </div>
+    <p class="w3-wide">💻 Coding</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div><br>
+
+    <!-- Stats -->
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">14+</span><br>Partners</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">44+</span><br>Projects Done</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">20+</span><br>Happy Clients</div>
+      <div class="w3-quarter w3-section"><span class="w3-xlarge">130+</span><br>Meetings</div>
+    </div>
+
+    <!-- Resume Button -->
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="portfolio">
+    <h2 class="w3-text-light-grey">My Portfolio</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Example Project Grid -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="project1.jpg" style="width:100%" alt="Project 1">
+        <img src="project2.jpg" style="width:100%" alt="Project 2">
       </div>
-
-      <div class="stats">
-        <div>14+ Partners</div>
-        <div>44+ Projects Done</div>
-        <div>20+ Happy Clients</div>
-        <div>130+ Meetings</div>
+      <div class="w3-half">
+        <img src="project3.jpg" style="width:100%" alt="Project 3">
+        <img src="project4.jpg" style="width:100%" alt="Project 4">
       </div>
-
-      <a href="resume.pdf" class="btn" download>Download Resume</a>
     </div>
-  </section>
+  </div>
 
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> mishikhan78692@gmail.com</p>
+    </div>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">© 2025 Zainab Tehreem Portfolio</p>
+  </footer>
+
+</div>
 </body>
 </html>
