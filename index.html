@@ -1,510 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Zainab Tehreem Portfolio</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="zzz.png" type="image/png">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zainab Tehreem JusticeWali Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #8a2be2;
-      --secondary: #ff6b6b;
-      --dark: #121212;
-      --light: #f8f8f8;
-      --accent: #00b4d8;
+      --primary: #8A2BE2;
+      --secondary: #FF4D94;
+      --accent: #00C2CB;
+      --dark: #1A1A2E;
+      --light: #F4F4F9;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
     }
     
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-sidebar {width: 120px; background: var(--dark);}
-    #main {margin-left: 120px}
-    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     
-    /* New styling */
     body {
-      background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
-      color: var(--light);
-    }
-    
-    .gradient-text {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-    
-    .hero-section {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('zzz.png');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 0;
       text-align: center;
-      padding: 2rem;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(138, 43, 226, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 95% 10%, rgba(255, 77, 148, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 50% 90%, rgba(0, 194, 203, 0.05) 0%, transparent 20%);
     }
     
-    .hero-img {
-      width: 200px;
-      height: 200px;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      padding: 40px 20px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .profile {
+      margin-bottom: 20px;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 25px var(--primary);
-      transition: transform 0.5s;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      margin: 0 auto 15px;
     }
     
-    .hero-img:hover {
-      transform: scale(1.05);
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     
-    .section-title {
-      position: relative;
-      padding-bottom: 15px;
+    h1 {
+      font-size: 2.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .tagline {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       margin-bottom: 30px;
     }
     
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      border-radius: 2px;
-    }
-    
-    .skill-bar {
-      background-color: #333;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-    
-    .skill-progress {
-      height: 28px;
-      border-radius: 10px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient);
+      color: white;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding-right: 15px;
-      color: white;
-      font-weight: bold;
-      transition: width 1s ease-in-out;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     
-    .project-grid {
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tasks {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
       margin-top: 30px;
     }
     
-    .project-item {
+    .task-box {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      transition: all 0.3s ease;
       position: relative;
-      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-      aspect-ratio: 1/1;
     }
     
-    .project-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    
-    .project-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    }
-    
-    .project-item:hover img {
-      transform: scale(1.1);
-    }
-    
-    .project-item::after {
+    .task-box::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(transparent 60%, rgba(0,0,0,0.8));
-      opacity: 0;
-      transition: opacity 0.3s;
+      height: 5px;
+      background: var(--gradient);
     }
     
-    .project-item:hover::after {
-      opacity: 1;
-    }
-    
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-    
-    .stat-box {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s;
-    }
-    
-    .stat-box:hover {
+    .task-box:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 5px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: inline-block;
-      text-decoration: none;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 5px;
-      padding: 15px;
-      width: 100%;
-      margin-bottom: 20px;
-      transition: all 0.3s;
-    }
-    
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
-    }
-    
-    .social-icons a {
-      display: inline-block;
-      margin-right: 20px;
-      font-size: 2rem;
-      color: var(--light);
-      transition: transform 0.3s, color 0.3s;
-    }
-    
-    .social-icons a:hover {
-      transform: translateY(-5px);
-      color: var(--primary);
-    }
-    
-    /* Modal styling */
-    #modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-    }
-    
-    #modalImg {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 900px;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
-    }
-    
-    #modal span {
+    .task-number {
       position: absolute;
-      top: 20px;
-      right: 35px;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .task-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .task-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+    
+    .task-box p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      min-height: 40px;
+    }
+    
+    .task-box a {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--gradient);
       color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      font-weight: 500;
     }
     
-    #modal span:hover {
-      color: var(--primary);
+    .task-box a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
     }
     
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9rem;
     }
     
-    .animate {
-      animation: fadeIn 1s ease forwards;
-    }
-    
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      .tasks {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
       }
       
-      .hero-section h1 {
-        font-size: 2.5rem;
+      h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
-
-<body class="w3-black">
-
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <img src="zzz.png" style="width:100%" alt="Zainab" class="animate">
-  <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PORTFOLIO</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
-
-<!-- Top navbar for small screens -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#home" class="w3-bar-item w3-button" style="width:25%">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25%">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" style="width:25%">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25%">CONTACT</a>
-  </div>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-bg"></div>
+      <div class="profile">
+        <div class="profile-img">
+          <i class="fas fa-film"></i>
+        </div>
+        <h2>Video Editor & Social Media Content Creator</h2>
+        <h1>Zainab Tehreem JusticeWali</h1>
+        <p class="tagline">Crafting compelling visual stories through editing and creative content</p>
+      </div>
+      
+   <div class="social-links">
+    <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fzain.abtehreem%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZmU4SmR4ZzZOc2tXSmFRQQEe8C2-bHMqL5Ucyoo5HGWFikLzQRBH-fi1XyKUaXYD9azV9JrufKbtkOhX-xA_aem_JO3TucVuSLpQ-6qfa9q5iw&h=AT29yph9cEYXgYBeCYO3DaNTqisG6_itKbcdetjHX409WRT0BfoktEabobWle-bn_GxGxzzMg7i-m3KPiV0cHsCndTUmFMP6SFE-IQCAnaO7Q6TElT5JLhHvLv4RsK6nABvL" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@yourprofile" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="=https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fzainab-tehreem-justice-wali-39b850372%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZmU4SmR4ZzZOc2tXSmFRQQEeDPO2r0Bt3F-BYgDA8ltqoE7uJ94vQEvXYEIjR5OeJCjaQkQx3bC37M0mmlY_aem_8XnVKTAMt49BE7K5Uq5X4Q&h=AT1sDQ0S-mYAD-JOtmB2MQDFcMIUeL84NmtrYdQNjtZlJ4QY5xi6iB2wRovX4T-6oYC3nl1_yGfMeYZfqgZgxGSaeY4CfMUeAzpq9FQdvYFAPiKSP8yzLrvdiIe33_VEUheO" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 </div>
 
-<!-- Main Page Content -->
-<div class="w3-padding-large" id="main">
 
-  <!-- Hero Section -->
-  <header class="hero-section" id="home">
-    <h1 class="w3-jumbo animate">I'm <span class="gradient-text w3-hide-small">Zainab Tehreem Justicewali</span></h1>
-    <p class="w3-large animate delay-1">Video Editor & Coder</p>
-    <img src="zzz.png" alt="Zainab" class="hero-img animate delay-2">
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey section-title">About Me</h2>
-    <p class="animate">Hello, I am Zainab Tehreem, a 12-year-old passionate learner who loves coding and video editing. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
-
-    <!-- Skills and Stats -->
-    <h3 class="w3-padding-16 w3-text-light-grey section-title">My Skills</h3>
-    <div class="animate">
-      <p class="w3-wide">Video Editing</p>
-      <div class="skill-bar">
-        <div class="skill-progress" style="width:90%">90%</div>
-      </div>
-    </div>
-    
-    <div class="animate delay-1">
-      <p class="w3-wide">Coding</p>
-      <div class="skill-bar">
-        <div class="skill-progress" style="width:85%">85%</div>
-      </div>
-    </div>
-
-    <div class="stats-container">
-      <div class="stat-box animate">
-        <div class="stat-number">4+</div>
-        <div>Partners</div>
-      </div>
-      <div class="stat-box animate delay-1">
-        <div class="stat-number">24</div>
-        <div>Projects Done</div>
-      </div>
-      <div class="stat-box animate delay-2">
-        <div class="stat-number">0</div>
-        <div>Happy Clients</div>
-      </div>
-      <div class="stat-box animate delay-3">
-        <div class="stat-number">24+</div>
-        <div>Meetings</div>
-      </div>
-    </div>
-
-    <a href="#" class="btn-primary animate">
-      <i class="fa fa-download"></i> Download Resume
-    </a>
-  </div>
-
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="portfolio">
-    <h2 class="w3-text-light-grey section-title w3-center">Projects</h2>
-
-    <!-- Projects Grid -->
-    <div class="project-grid">
-      <div class="project-item"><img src="JUST.jpg" alt="Project 1" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="Tic-Tac-Toe game.jpg" alt="Project 2" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="Calculator.jpg" alt="Project 3" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="To-Do List.jpg" alt="Project 4" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="E.jpg" alt="Project 5" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="W.jpg" alt="Project 6" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="R.jpg" alt="Project 7" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="T.jpg" alt="Project 8" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="Y.jpg" alt="Project 9" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="U.jpg" alt="Project 10" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="I.jpg" alt="Project 11" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="O.jpg" alt="Project 12" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="P.jpg" alt="Project 13" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="L.jpg" alt="Project 14" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="K.jpg" alt="Project 15" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="J.jpg" alt="Project 16" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="H.jpg" alt="Project 17" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="G.jpg" alt="Project 18" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="F.jpg" alt="Project 19" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="D.jpg" alt="Project 20" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="1.jpg" alt="Project 21" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="2.jpg" alt="Project 22" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="3.jpg" alt="Project 23" onclick="openModal(this)"></div>
-      <div class="project-item"><img src="4.jpg" alt="Project 24" onclick="openModal(this)"></div>
-    </div>
-  </div>
-
-  <!-- Image Modal -->
-  <div id="modal">
-    <span onclick="closeModal()">&times;</span>
-    <img id="modalImg">
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey section-title">Contact Me</h2>
-    
-    <div class="w3-section">
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> mishikhan78692@gmail.com</p>
-    </div>
-    
-    <p class="animate">Let's get in touch. Send me a message:</p>
-
-    <form class="contact-form" action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
-      <p><input class="w3-input w3-padding-16 animate" type="text" placeholder="Name" required></p>
-      <p><input class="w3-input w3-padding-16 animate delay-1" type="email" placeholder="Email" required></p>
-      <p><input class="w3-input w3-padding-16 animate delay-2" type="text" placeholder="Message" required></p>
-      <p>
-        <button class="btn-primary animate delay-3" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  </div>
-
-  <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <div class="social-icons">
-      <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank">
-        <i class="fa fa-facebook-official"></i>
-      </a>
-      <a href=" https://www.instagram.com/zain.abtehreem/ " target="_blank">
-        <i class="fa fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank">
-        <i class="fa fa-linkedin"></i>
-      </a>
-    </div>
-    <p class="w3-medium">© 2024 Zainab Tehreem Portfolio</p>
-  </footer>
-
+    <main>
+      <h2>Coding Book 1 – Rehan School Portfolio</h2>
+      
+      <div class="tasks">
+<!-- Task boxes with meaningful icons -->
+<div class="task-box">
+  <div class="task-number">01</div>
+  <div class="task-icon"><i class="fas fa-calculator"></i></div>
+  <h3>Calculator</h3>
+  <p>A simple calculator app</p>
+  <a href="https://codepen.io/mishikhan-khan/full/jOgmjRb" target="_blank">View Project</a>
 </div>
 
-<!-- Modal Script -->
-<script>
-function openModal(element) {
-  document.getElementById("modalImg").src = element.src;
-  document.getElementById("modal").style.display = "block";
-}
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
+<div class="task-box">
+  <div class="task-number">02</div>
+  <div class="task-icon"><i class="fas fa-times"></i></div>
+  <h3>Tic-Tac-Toe Game</h3>
+  <p>A fun 2-player tic-tac-toe game</p>
+  <a href="https://codepen.io/mishikhan-khan/full/MWNVxpJ" target="_blank">View Project</a>
+</div>
 
-// Add animation on scroll
-document.addEventListener('DOMContentLoaded', function() {
-  const animatedElements = document.querySelectorAll('.animate');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  animatedElements.forEach(element => {
-    element.style.opacity = 0;
-    observer.observe(element);
-  });
-  
-  // Animate skill bars on scroll
-  const skillBars = document.querySelectorAll('.skill-progress');
-  skillBars.forEach(bar => {
-    const width = bar.style.width;
-    bar.style.width = '0';
-    
-    setTimeout(() => {
-      bar.style.width = width;
-    }, 500);
-  });
-});
-</script>
+<div class="task-box">
+  <div class="task-number">03</div>
+  <div class="task-icon"><i class="fas fa-list-ul"></i></div>
+  <h3>To-Do List App</h3>
+  <p>Organize tasks with a to-do list</p>
+  <a href="https://codepen.io/mishikhan-khan/full/BaXrbda" target="_blank">View Project</a>
+</div>
 
+<div class="task-box">
+  <div class="task-number">04</div>
+  <div class="task-icon"><i class="fas fa-question-circle"></i></div>
+  <h3>Multiple-Choice Quiz Game</h3>
+  <p>Interactive quiz with multiple choices</p>
+  <a href="https://codepen.io/mishikhan-khan/full/ZEgxPay" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">05</div>
+  <div class="task-icon"><i class="fas fa-cloud-sun"></i></div>
+  <h3>Weather App</h3>
+  <p>Check real-time weather updates</p>
+  <a href="https://codepen.io/mishikhan-khan/full/WNVzmKx" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">06</div>
+  <div class="task-icon"><i class="fas fa-dollar-sign"></i></div>
+  <h3>Currency Converter App</h3>
+  <p>Convert currencies easily</p>
+  <a href="https://codepen.io/mishikhan-khan/full/poMLBoW" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">07</div>
+  <div class="task-icon"><i class="fas fa-stopwatch"></i></div>
+  <h3>Stopwatch App</h3>
+  <p>Track time with precision</p>
+  <a href="https://codepen.io/mishikhan-khan/full/dyxmLMx" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">08</div>
+  <div class="task-icon"><i class="fas fa-bell"></i></div>
+  <h3>Alarm Clock App</h3>
+  <p>Set alarms and reminders</p>
+  <a href="https://codepen.io/mishikhan-khan/full/ExqEJWr" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">09</div>
+  <div class="task-icon"><i class="fas fa-calendar-alt"></i></div>
+  <h3>Calendar App</h3>
+  <p>Plan and track events</p>
+  <a href="https://codepen.io/mishikhan-khan/full/yLmKrzE" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">10</div>
+  <div class="task-icon"><i class="fas fa-bell"></i></div>
+  <h3>Reminder App</h3>
+  <p>Get timely reminders</p>
+  <a href="https://codepen.io/mishikhan-khan/full/dyxmLJo" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">11</div>
+  <div class="task-icon"><i class="fas fa-calculator"></i></div>
+  <h3>Calculator App</h3>
+  <p>Advanced calculator version</p>
+  <a href="https://codepen.io/mishikhan-khan/full/ZEgxeow" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">12</div>
+  <div class="task-icon"><i class="fas fa-times-circle"></i></div>
+  <h3>Tic-Tac-Toe Game</h3>
+  <p>Another version of tic-tac-toe</p>
+  <a href="https://codepen.io/mishikhan-khan/full/LYwdvmE" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">13</div>
+  <div class="task-icon"><i class="fas fa-list-check"></i></div>
+  <h3>To-Do List App</h3>
+  <p>Improved task management app</p>
+  <a href="https://codepen.io/mishikhan-khan/full/gbYxPbP" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">14</div>
+  <div class="task-icon"><i class="fas fa-question"></i></div>
+  <h3>Quiz Game</h3>
+  <p>Fun question and answer game</p>
+  <a href="https://codepen.io/mishikhan-khan/full/VwoXNBe" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">15</div>
+  <div class="task-icon"><i class="fas fa-exchange-alt"></i></div>
+  <h3>Currency Converter</h3>
+  <p>Another currency converter version</p>
+  <a href="https://codepen.io/mishikhan-khan/full/OJKvGaj" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">16</div>
+  <div class="task-icon"><i class="fas fa-stopwatch-20"></i></div>
+  <h3>Stopwatch App</h3>
+  <p>Lightweight stopwatch tool</p>
+  <a href="https://codepen.io/mishikhan-khan/full/OPLjVVQ" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">17</div>
+  <div class="task-icon"><i class="fas fa-clock"></i></div>
+  <h3>Alarm Clock App</h3>
+  <p>Simple alarm app</p>
+  <a href="https://codepen.io/mishikhan-khan/full/BaXrEXY" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">18</div>
+  <div class="task-icon"><i class="fas fa-calendar"></i></div>
+  <h3>Calendar App</h3>
+  <p>Calendar with more features</p>
+  <a href="https://codepen.io/mishikhan-khan/full/BaXreNr" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">19</div>
+  <div class="task-icon"><i class="fas fa-hourglass-half"></i></div>
+  <h3>Simple Stopwatch App</h3>
+  <p>Basic stopwatch</p>
+  <a href="https://codepen.io/mishikhan-khan/full/qBeowvd" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">20</div>
+  <div class="task-icon"><i class="fas fa-bell"></i></div>
+  <h3>Reminder App</h3>
+  <p>Another reminder app</p>
+  <a href="https://codepen.io/mishikhan-khan/full/NWQYVNL" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">21</div>
+  <div class="task-icon"><i class="fas fa-question-circle"></i></div>
+  <h3>Guess the Number Game</h3>
+  <p>Fun guessing game</p>
+  <a href="https://codepen.io/mishikhan-khan/full/VwoXOmb" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">22</div>
+  <div class="task-icon"><i class="fas fa-random"></i></div>
+  <h3>Word Scramble Game</h3>
+  <p>Unscramble the words</p>
+  <a href="https://codepen.io/mishikhan-khan/full/WNVEwNR" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">23</div>
+  <div class="task-icon"><i class="fas fa-hand-scissors"></i></div>
+  <h3>Rock, Paper, Scissors Game</h3>
+  <p>Classic RPS game</p>
+  <a href="https://codepen.io/mishikhan-khan/full/bNVJEZR" target="_blank">View Project</a>
+</div>
+
+<div class="task-box">
+  <div class="task-number">24</div>
+  <div class="task-icon"><i class="fas fa-memory"></i></div>
+  <h3>Memory Card Game</h3>
+  <p>Challenge your memory</p>
+  <a href="https://codepen.io/mishikhan-khan/full/RNWOrmr" target="_blank">View Project</a>
+</div>
+
+
+    <footer>
+      Coding Book 1 – Rehan School Portfolio
+    </footer>
+  </div>
 </body>
 </html>
-
